@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DATE</title>
+
+    <script>
+
+        function handler(){
+       
+           const value1= document.getElementById('d1').value;
+           
+           document.getElementById('iD').innerHTML=` <h1><p>Todays date is:${value1}</p></h>`
+        
+        }
+    </script>
+</head>
+<body>
+
+<h2>
+    Date:<input  id="d1"type="date" onchange="handler()">
+</h2>
+    <div id="iD"></div>
+
+</body>
+</html>
