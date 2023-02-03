@@ -1,0 +1,33 @@
+<html>
+<head>
+  <title>Hello World</title>    
+<script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+  
+
+    <script>
+    $(document).ready(function() {
+        $('#dropdown').click(function() {
+          var selectedOption = $(this).val();
+          if (selectedOption === 'black-bf-white-fg') {
+            $('#test').css({ 'color': 'black', 'background-color': 'white' });
+          } else if (selectedOption === 'white-bg-black-fg') {
+            $('#test').css({ 'color': 'white', 'background-color': 'black' });
+          }
+        });
+      });
+
+    </script>
+</head>
+    <body >
+<select id="dropdown">
+  <option value="black-bf-white-fg">Black bg White fg</option>
+  <option value="white-bg-black-fg">White bg Black fg</option>
+</select>
+<div id="test">
+<h1><p>Hello World</p></h1>
+</div>
+
+
+    </body>
+
+</html>
