@@ -1,0 +1,57 @@
+
+________________________________________________
+Q3
+_________________________________________________________
+component1.js
+
+import React, { useState } from 'react'
+import Component2 from './Component2';
+
+export default function Component1() {
+    const [city,setCity]=useState("");
+    console.log(city);
+  return (
+    <div >
+        <h4>Select city : </h4>
+        <select onChange={(e)=>{setCity(e.target.value)}}>
+            <option>Pune</option>
+            <option>Kolhapur</option>
+            <option>Delhi</option>
+            <option>Nashik</option>
+            <option>Mumbai</option>
+        </select>
+        <Component2 city={city}></Component2>
+    </div>
+  )
+}
+------------------------------------------------------------
+Component2.js
+
+import React, { useState } from "react";
+
+export default function Component2(props) {
+  let x = props.city;
+///////
+  var arr=[...x].reverse();
+////
+  console.log(x);
+  return (
+    <div>
+      <h2>selected city= {arr} </h2>
+    </div>
+  );
+}
+________________________________________________________________
+
+App.js
+
+import React from 'react'
+import Component1 from './Component1'
+
+export default function App5() {
+  return (
+    <div>
+        <Component1></Component1>
+    </div>
+  )
+}
