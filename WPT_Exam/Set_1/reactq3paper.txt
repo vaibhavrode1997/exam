@@ -1,0 +1,47 @@
+
+
+import React from "react";
+export default class StudentTable extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        students: [
+          { name: "mmm", marks: 90 },
+          { name: "iii", marks: 88 },
+        ],
+      };
+      this.handleDelete = this.handleDelete.bind(this);
+    }
+  
+    handleDelete(index) {
+      let students = [...this.state.students];
+      students.splice(index, 1);
+      this.setState({ students });
+    }
+  
+    render() {
+      return (
+        <table border="1">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Marks</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {this.state.students.map((student, index) => (
+              <tr key={index}>
+                <td>{student.name}</td>
+                <td>{student.marks}</td>
+                <td>
+                  <button onClick={() => this.handleDelete(index)}>Delete</button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      );
+    }
+  }
+  

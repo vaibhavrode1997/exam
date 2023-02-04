@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+        $().ready(function(){
+            $("#dropdown").click(function(){
+                var seloption=$(this).val();
+                if(seloption==="black-bg-white-fg")
+                {
+                    $("#d1").css({"color":"white","background-color":"black"});
+                }
+                else{
+                    $('#d1').css({ 'color': 'black', 'background-color': 'white' });
+                }
+
+            })
+
+        })
+
+
+    </script>
+
+
+</head>
+<body>
+    <select id="dropdown">
+        <option value="black-bg-white-fg">Black bg White fg</option>
+        <option value="white-bg-black-fg">White bg Black fg</option>
+    </select>
+    <div id="d1">
+        <h1>Hello World</h1>
+    </div>
+</body>
+</html>
